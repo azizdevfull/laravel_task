@@ -20,6 +20,8 @@ class User extends Authenticatable
     protected $fillable = [
         'phone',
         'password',
+        'is_blocked',
+        'last_login_at'
     ];
 
     /**

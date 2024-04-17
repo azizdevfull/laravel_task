@@ -10,17 +10,17 @@ class AuthService
 {
     public function signUp($request)
     {
-        $user = User::create($request->validated());
+        User::create($request->validated());
 
-        $token = $user->createToken('authToken')->plainTextToken;
-
-        return response()->success($token, 'User logged in successfully', 201);
+        return response()->success(null, 'User registered successfully', 201);
     }
 
     public function login($request)
     {
         if (Auth::attempt(['phone' => $request->phone, 'password' => $request->password])) {
             $user = User::where('phone', $request->phone)->first();
+            $user->last_login_at = now();
+            $user->update();
             $token = $user->createToken('authToken')->plainTextToken;
 
             return response()->success($token, 'User logged in successfully');

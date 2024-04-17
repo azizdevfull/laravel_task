@@ -59,9 +59,10 @@
                                             "type": "string",
                                             "example": "User registered successfully"
                                         },
-                                        "token": {
+                                        "data": {
                                             "description": "Authentication token for the registered user",
-                                            "type": "string"
+                                            "type": "string",
+                                            "example": null
                                         }
                                     },
                                     "type": "object"
@@ -1057,6 +1058,15 @@
                                                     "type": "string",
                                                     "example": "+9999999"
                                                 },
+                                                "last_login_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-04-16 23:18:59"
+                                                },
+                                                "is_blocked": {
+                                                    "type": "boolean",
+                                                    "example": 0
+                                                },
                                                 "created_at": {
                                                     "type": "string",
                                                     "format": "date-time",
@@ -1193,6 +1203,15 @@
                                                     "type": "string",
                                                     "example": "+9999999"
                                                 },
+                                                "last_login_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-04-16 23:18:59"
+                                                },
+                                                "is_blocked": {
+                                                    "type": "boolean",
+                                                    "example": 0
+                                                },
                                                 "created_at": {
                                                     "type": "string",
                                                     "format": "date-time",
@@ -1271,9 +1290,22 @@
                                         },
                                         "data": {
                                             "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
                                                 "phone": {
                                                     "type": "string",
                                                     "example": "+9999999"
+                                                },
+                                                "last_login_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2024-04-16 23:18:59"
+                                                },
+                                                "is_blocked": {
+                                                    "type": "boolean",
+                                                    "example": 0
                                                 },
                                                 "created_at": {
                                                     "type": "string",

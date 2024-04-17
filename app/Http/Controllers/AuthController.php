@@ -46,8 +46,9 @@ class AuthController extends Controller
      *                 example="User registered successfully"
      *             ),
      *             @OA\Property(
-     *                 property="token",
+     *                 property="data",
      *                 type="string",
+     *                 example=null,
      *                 description="Authentication token for the registered user"
      *             )
      *         )

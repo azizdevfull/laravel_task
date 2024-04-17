@@ -26,6 +26,8 @@ class UserController extends Controller
      *                 type="object",
      *                 @OA\Property(property="id", type="integer", example=1),
      *                 @OA\Property(property="phone", type="string", example="+9999999"),
+     *                 @OA\Property(property="last_login_at", type="string",format="date-time", example="2024-04-16 23:18:59"),
+     *                 @OA\Property(property="is_blocked", type="boolean", example=0),
      *                 @OA\Property(property="created_at", type="string", format="date-time", example="2024-04-17T09:53:02.000000Z"),
      *                 @OA\Property(property="updated_at", type="string", format="date-time", example="2024-04-17T11:10:21.000000Z")
      *             )
@@ -97,6 +99,8 @@ class UserController extends Controller
      *                 type="object",
      *                 @OA\Property(property="id", type="integer", example=1),
      *                 @OA\Property(property="phone", type="string", example="+9999999"),
+     *                 @OA\Property(property="last_login_at", type="string",format="date-time", example="2024-04-16 23:18:59"),
+     *                 @OA\Property(property="is_blocked", type="boolean", example=0),
      *                 @OA\Property(property="created_at", type="string", format="date-time", example="2024-04-17T09:53:02.000000Z"),
      *                 @OA\Property(property="updated_at", type="string", format="date-time", example="2024-04-17T11:10:21.000000Z")
      *             )
@@ -139,7 +143,10 @@ class UserController extends Controller
      *             @OA\Property(
      *                 property="data",
      *                 type="object",
+     *                 @OA\Property(property="id", type="integer", example=1),
      *                 @OA\Property(property="phone", type="string", example="+9999999"),
+     *                 @OA\Property(property="last_login_at", type="string",format="date-time", example="2024-04-16 23:18:59"),
+     *                 @OA\Property(property="is_blocked", type="boolean", example=0),                 
      *                 @OA\Property(property="created_at", type="string", format="date-time", example="2024-04-17T09:53:02.000000Z"),
      *                 @OA\Property(property="updated_at", type="string", format="date-time", example="2024-04-17T11:10:21.000000Z")
      *             )
