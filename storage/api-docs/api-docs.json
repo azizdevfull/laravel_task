@@ -34,13 +34,13 @@
                                     "phone": {
                                         "description": "User's phone number",
                                         "type": "string",
-                                        "example": "1234567890"
+                                        "example": "+998991903704"
                                     },
                                     "password": {
                                         "description": "User's password (min 6 characters)",
                                         "type": "string",
                                         "format": "password",
-                                        "example": "secret"
+                                        "example": "password"
                                     }
                                 },
                                 "type": "object"
@@ -127,13 +127,13 @@
                                     "phone": {
                                         "description": "User's phone number",
                                         "type": "string",
-                                        "example": "1234567890"
+                                        "example": "+998991903704"
                                     },
                                     "password": {
                                         "description": "User's password",
                                         "type": "string",
                                         "format": "password",
-                                        "example": "secret"
+                                        "example": "password"
                                     }
                                 },
                                 "type": "object"
@@ -166,6 +166,41 @@
                         "description": "Unauthorized: Invalid credentials"
                     }
                 }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Logout the authenticated user",
+                "operationId": "fe8f3429cd6979b3b4517e186505f9f9",
+                "responses": {
+                    "200": {
+                        "description": "User logged out successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "User logged out successfully"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized: Authentication token is missing or invalid"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/": {

@@ -84,8 +84,6 @@ class AuthController extends Controller
     {
         return $this->authService->signUp($request);
     }
-
-
     /**
      * @OA\Post(
      *     path="/api/login",
@@ -139,6 +137,31 @@ class AuthController extends Controller
     }
 
 
+    /**
+     * @OA\Post(
+     *     path="/api/logout",
+     *     tags={"Authentication"},
+     *     summary="Logout the authenticated user",
+     *     security={
+     *         {"bearerAuth": {}}
+     *     },
+     *     @OA\Response(
+     *         response=200,
+     *         description="User logged out successfully",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                 property="message",
+     *                 type="string",
+     *                 example="User logged out successfully"
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Unauthorized: Authentication token is missing or invalid"
+     *     )
+     * )
+     */
     public function logout()
     {
         return $this->authService->logout();
