@@ -966,17 +966,6 @@
                 }
             }
         },
-        "/": {
-            "get": {
-                "description": "Home page",
-                "operationId": "58658e34a5c8bd71c4a0afed6de10d20",
-                "responses": {
-                    "default": {
-                        "description": "Welcome page"
-                    }
-                }
-            }
-        },
         "/api/regions": {
             "get": {
                 "tags": [

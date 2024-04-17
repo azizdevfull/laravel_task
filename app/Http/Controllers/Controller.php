@@ -16,11 +16,6 @@ namespace App\Http\Controllers;
  *     )
  * )
  * 
- * @OA\Get(
- *     path="/",
- *     description="Home page",
- *     @OA\Response(response="default", description="Welcome page")
- * )
  */
 abstract class Controller
 {
