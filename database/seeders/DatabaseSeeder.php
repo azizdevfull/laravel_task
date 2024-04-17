@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Brand;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\DistrictSeeder;
+use Database\Seeders\RegionSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Brand::create(['name' => 'Texnomart']);
+        $this->call([
+            RegionSeeder::class,
+            DistrictSeeder::class
+        ]);
     }
 }

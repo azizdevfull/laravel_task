@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BranchController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -21,6 +22,9 @@ Route::apiResource('users', UserController::class);
 Route::post('/brands/{id}', [BrandController::class, 'update']);
 Route::apiResource('brands', BrandController::class);
 
+// Branch crud routes
+Route::post('/branches/{id}', [BranchController::class, 'update']);
+Route::apiResource('branches', BranchController::class);
 
 Route::middleware('auth:sanctum')->group(function () {
 
