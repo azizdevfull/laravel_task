@@ -28,4 +28,10 @@ class AuthService
         }
         return response()->error('Unauthenticated', 401);
     }
+
+    public function logout()
+    {
+        Auth::user()->tokens()->delete();
+        return response()->success(null, 'User logged out successfully');
+    }
 }
