@@ -10,3 +10,4 @@ Artisan::command('inspire', function () {
 
 
 Schedule::command('block:inactive-users')->daily();
+Schedule::command('sync:currency')->daily();
