@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Brand;
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\BranchSeeder;
+use Database\Seeders\BrandSeeder;
 use Database\Seeders\DistrictSeeder;
 use Database\Seeders\RegionSeeder;
 use Illuminate\Database\Seeder;
@@ -18,7 +17,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             RegionSeeder::class,
-            DistrictSeeder::class
+            DistrictSeeder::class,
+            BrandSeeder::class,
+            BranchSeeder::class
         ]);
     }
 }

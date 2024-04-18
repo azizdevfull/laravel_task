@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -29,7 +30,12 @@ Route::apiResource('branches', BranchController::class);
 
 // Regions route
 Route::get('/regions', [RegionController::class, 'index']);
-Route::middleware('auth:sanctum')->group(function () {
 
+Route::middleware('auth:sanctum')->group(function () {
+    // Logout route
     Route::post('/logout', [AuthController::class, 'logout']);
 });
+
+
+// Currency sync route
+Route::get('/syncCurrencies', [CurrencyController::class, 'syncCurrencies']);
