@@ -16,7 +16,9 @@ class DistrictResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name
+            'name' => $this->name,
+            'region' => $this->region->name,
+            'branches' => $this->branches->count(),
         ];
     }
 }

@@ -17,7 +17,8 @@ class RegionResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'distrcts' => DistrictResource::collection($this->districts)
+            'branches' => $this->branches->count(),
+            'districts' => DistrictResource::collection($this->whenLoaded('districts'))
         ];
     }
 }

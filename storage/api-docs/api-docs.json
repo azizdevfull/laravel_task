@@ -998,6 +998,10 @@
                                                         "type": "string",
                                                         "example": "Region Name"
                                                     },
+                                                    "branches": {
+                                                        "type": "integer",
+                                                        "example": 15
+                                                    },
                                                     "districts": {
                                                         "type": "array",
                                                         "items": {
@@ -1009,6 +1013,10 @@
                                                                 "name": {
                                                                     "type": "string",
                                                                     "example": "District Name"
+                                                                },
+                                                                "branches": {
+                                                                    "type": "integer",
+                                                                    "example": 10
                                                                 }
                                                             },
                                                             "type": "object"

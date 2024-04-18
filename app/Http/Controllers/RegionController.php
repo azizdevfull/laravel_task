@@ -28,13 +28,16 @@ class RegionController extends Controller
      *                     type="object",
      *                     @OA\Property(property="id", type="integer", example=1),
      *                     @OA\Property(property="name", type="string", example="Region Name"),
+     *                     @OA\Property(property="branches", type="integer", example=15),
+     * 
      *                     @OA\Property(
      *                         property="districts",
      *                         type="array",
      *                         @OA\Items(
      *                             type="object",
      *                             @OA\Property(property="id", type="integer", example=1),
-     *                             @OA\Property(property="name", type="string", example="District Name")
+     *                             @OA\Property(property="name", type="string", example="District Name"),
+     *                             @OA\Property(property="branches", type="integer", example=10),
      *                         )
      *                     )
      *                 )
@@ -46,6 +49,6 @@ class RegionController extends Controller
      */
     public function index()
     {
-        return $this->regionService->index();   
+        return $this->regionService->index();
     }
 }

@@ -9,6 +9,6 @@ class RegionService
 {
     public function index()
     {
-        return RegionResource::collection(Region::with('districts')->get());
+        return RegionResource::collection(Region::with('districts.branches', 'branches')->get());
     }
 }
