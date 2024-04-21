@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\RegionResource;
 use App\Models\Region;
 use App\Services\RegionService;
+use Illuminate\Support\Facades\Cache;
 
 class RegionController extends Controller
 {
@@ -51,8 +52,12 @@ class RegionController extends Controller
      */
     public function index()
     {
-        $regions = Region::with('districts.branches', 'branches')->get();
-        return response()->success(RegionResource::collection($regions));
-        // return $this->regionService->index();
+        $cacheKey = 'regions_with_districts_and_branches';
+
+        $regions = Cache::rememberForever($cacheKey, function () {
+            return Region::with('districts')->get();
+        });
+        return $regions;
+        // return response()->success(RegionResource::collection(Cache::get($cacheKey)));
     }
 }
