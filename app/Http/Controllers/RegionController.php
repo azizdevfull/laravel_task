@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\RegionResource;
+use App\Models\Region;
 use App\Services\RegionService;
 
 class RegionController extends Controller
@@ -49,6 +51,8 @@ class RegionController extends Controller
      */
     public function index()
     {
-        return $this->regionService->index();
+        $regions = Region::with('districts.branches', 'branches')->get();
+        return response()->success(RegionResource::collection($regions));
+        // return $this->regionService->index();
     }
 }
